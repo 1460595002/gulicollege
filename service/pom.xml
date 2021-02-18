@@ -10,30 +10,38 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>service</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>service-edu</module>
+        <module>service-vod</module>
+    </modules>
     <dependencies>
 
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.cloud</groupId>-->
+        <!--            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>-->
+        <!--        </dependency>-->
 
-<!--        &lt;!&ndash;hystrix依赖，主要是用  @HystrixCommand &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>-->
-<!--        </dependency>-->
+        <!--        &lt;!&ndash;hystrix依赖，主要是用  @HystrixCommand &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.cloud</groupId>-->
+        <!--            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>-->
+        <!--        </dependency>-->
 
-<!--        &lt;!&ndash;服务注册&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash;服务调用&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-openfeign</artifactId>-->
-<!--        </dependency>-->
-
+        <!--        &lt;!&ndash;服务注册&ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.cloud</groupId>-->
+        <!--            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>-->
+        <!--        </dependency>-->
+        <!--        &lt;!&ndash;服务调用&ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.cloud</groupId>-->
+        <!--            <artifactId>spring-cloud-starter-openfeign</artifactId>-->
+        <!--        </dependency>-->
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity-engine-core</artifactId>
+            <version>2.0</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -51,11 +59,11 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
-<!--        &lt;!&ndash; velocity 模板引擎, Mybatis Plus 代码生成器需要 &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.apache.velocity</groupId>-->
-<!--            <artifactId>velocity-engine-core</artifactId>-->
-<!--        </dependency>-->
+        <!--        &lt;!&ndash; velocity 模板引擎, Mybatis Plus 代码生成器需要 &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.velocity</groupId>-->
+        <!--            <artifactId>velocity-engine-core</artifactId>-->
+        <!--        </dependency>-->
 
         <!--swagger-->
         <dependency>
@@ -105,10 +113,10 @@
             <artifactId>gson</artifactId>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>com.liuscoding</groupId>-->
-<!--            <artifactId>service_base</artifactId>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.liuscoding</groupId>-->
+        <!--            <artifactId>service_base</artifactId>-->
+        <!--        </dependency>-->
 
 
         <dependency>
