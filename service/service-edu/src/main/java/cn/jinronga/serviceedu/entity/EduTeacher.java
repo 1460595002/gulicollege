@@ -54,11 +54,11 @@ public class EduTeacher implements Serializable {
     @TableLogic //逻辑删除
     private Boolean isDeleted;
 
-    @ApiModelProperty(value = "创建时间", example = "2021-01-01 8:00:00")
+    @ApiModelProperty(value = "创建时间")
     @TableField(fill = FieldFill.INSERT) //自动填充 插入填充字段
     private Date gmtCreate;
 
-    @ApiModelProperty(value = "更新时间", example = "2021-01-01 8:00:00")
+    @ApiModelProperty(value = "更新时间")
     @TableField(fill = FieldFill.INSERT_UPDATE) // 插入和更新填充字段
     private Date gmtModified;
 

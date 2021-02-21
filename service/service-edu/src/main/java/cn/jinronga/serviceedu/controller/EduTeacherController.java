@@ -2,10 +2,10 @@ package cn.jinronga.serviceedu.controller;
 
 
 import cn.jinronga.commonutils.R;
+import cn.jinronga.servicebase.exception.GuliException;
 import cn.jinronga.serviceedu.entity.EduTeacher;
 import cn.jinronga.serviceedu.query.EduTeacherQuery;
 import cn.jinronga.serviceedu.service.EduTeacherService;
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -75,6 +75,40 @@ public class EduTeacherController {
         List<EduTeacher> records = eduTeacherPage.getRecords();//list集合
         long total = eduTeacherPage.getTotal();
         return R.ok().data("total", total).data("rows", records);
+    }
+
+    @ApiOperation(value = "新增讲师")
+    @PostMapping("/addTeacher")
+    public R save(@ApiParam(name = "teacher", value = "讲师对象", required = true)
+                  @RequestBody EduTeacher eduTeacher) {
+
+        boolean save = teacherService.save(eduTeacher);
+        return save == true ? R.ok() : R.error();
+    }
+
+    @ApiOperation(value = "根据Id查询讲师信息")
+    @GetMapping("getTeacher/{id}")
+    public R getById(@ApiParam(name = "teacher", value = "讲师id", required = true) @PathVariable("id") String id) {
+        EduTeacher teacher = teacherService.getById(id);
+
+/*        try {
+            int i = 10 / 0;
+        } catch (Exception e) {
+            throw new GuliException(34343, "我会好好学习Java得");
+        }*/
+        return R.ok().data("data", teacher);
+    }
+
+    @ApiOperation(value = "根据Id修改讲师信息")
+    @PutMapping("updateTeacher/{id}")
+    public R updateTeacher(@ApiParam(name = "teacher", value = "讲师id", required = true)
+                           @PathVariable("id") String id,
+                           @ApiParam(name = "teacher", value = "讲师对象", required = true) @RequestBody EduTeacher teacher) {
+
+        teacher.setId(id);
+        boolean b = teacherService.updateById(teacher);
+
+        return b == true ? R.ok() : R.error();
     }
 }
 
