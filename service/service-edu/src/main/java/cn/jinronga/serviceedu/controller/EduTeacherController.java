@@ -13,7 +13,9 @@ import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * <p>
@@ -55,10 +57,7 @@ public class EduTeacherController {
                            @PathVariable("id") String id) {
         //逻辑删除
         boolean flag = teacherService.removeById(id);
-        if (!flag) {
-            R.error();
-        }
-        return R.ok();
+        return flag == true ? R.ok() : R.error();
     }
 
     @ApiOperation(value = "分页讲师列表")
@@ -81,7 +80,10 @@ public class EduTeacherController {
     @PostMapping("/addTeacher")
     public R save(@ApiParam(name = "teacher", value = "讲师对象", required = true)
                   @RequestBody EduTeacher eduTeacher) {
-
+        String uuid = UUID.randomUUID().toString().substring(1, 16).replaceAll("-","");
+        eduTeacher.setId(uuid);
+        eduTeacher.setGmtCreate(new Date());
+        eduTeacher.setGmtModified(new Date());
         boolean save = teacherService.save(eduTeacher);
         return save == true ? R.ok() : R.error();
     }
