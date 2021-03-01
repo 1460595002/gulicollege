@@ -40,6 +40,4 @@ public class FileController {
 
         return R.ok().message("文件上传成功！").data("url", uploadUrl);
     }
-
-
 }
