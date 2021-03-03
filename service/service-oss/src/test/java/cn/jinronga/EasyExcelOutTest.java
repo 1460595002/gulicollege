@@ -16,7 +16,7 @@ import java.util.List;
  * @Description EasyExcelTest
  * @Version 1.0
  */
-public class EasyExcelTest {
+public class EasyExcelOutTest {
     public static void main(String[] args) {
 //        inputDateEasyExcel1();
         inputDateEasyExcel2();
