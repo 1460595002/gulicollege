@@ -1,8 +1,11 @@
 package cn.jinronga.serviceedu.service;
 
+import cn.jinronga.serviceedu.Vo.SubjectNestedVo;
 import cn.jinronga.serviceedu.entity.EduSubject;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 /**
  * <p>
@@ -18,5 +21,13 @@ public interface EduSubjectService extends IService<EduSubject> {
      *
      * @param file
      */
-    void batchImport(MultipartFile file,EduSubjectService subjectService);
+    void batchImport(MultipartFile file, EduSubjectService subjectService);
+
+    /**
+     * 二级分类数据
+     *
+     * @return
+     */
+    List<SubjectNestedVo> nestedList();
+
 }
